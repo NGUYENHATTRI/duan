@@ -39,7 +39,7 @@
 
     function add_post(){
         global $conn;
-        $sql = "INSERT INTO post (title,content)  VALUES (?,?)";
+        $sql = "INSERT INTO post (title , content)  VALUES (?,?)";
         $stmt = $conn->prepare($sql);
         $stmt ->execute([$_POST['title'], $_POST['content']]);
         
@@ -48,7 +48,7 @@
 
     function update_post(){
         global $conn;
-        $sql = 'UPDATE post SET it = ?,title = ?,content = ? WHERE id = '. $_POST['title'];
+        $sql = 'UPDATE post SET id = ?,title = ?,content = ? WHERE id = '. $_POST['title'];
         $stmt = $conn->prepare($sql);
         $stmt ->execute([$_POST['id'], $_POST['title'], $_POST['content']]);
         header ('location: ../index.php?page=post&action=list');

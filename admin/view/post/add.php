@@ -201,11 +201,11 @@
               <input type="text" name="action" value="add" hidden>
               <div class="form-group col-md-3">
                 <label class="control-label">Tên bài viết</label>
-                <input class="form-control" type="text" name="post_title">
+                <input class="form-control" type="text" name="post">
               </div>
               <div class="form-group col-md-3">
                 <label class="control-label">Nội dung</label>
-                <input class="form-control" type="text" name="post_title">
+                <input class="form-control" type="text" name="content">
               </div>
 
              
