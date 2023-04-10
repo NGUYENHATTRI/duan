@@ -78,7 +78,7 @@ session_start();
                 <div class="grid">
                     <h2 class="product__title">SẢN PHẨM MỚI</h2>
                 <?php
-                $product_list = $conn->query('SELECT * FROM product where kho_hang >= 0 limit 7')->fetchAll();
+                $product_list = $conn->query('SELECT * FROM product where kho_hang >= 1 limit 7')->fetchAll();
                 $i = 0;
                 foreach($product_list as $product){
                     $image_path = "view/img/shop/" . $product['image_path'];
@@ -135,8 +135,8 @@ session_start();
                 </h2>
                 <div class="article" style="background-image: url('view/img/Group\ 393.svg');">
                     <span class="article__author">By: admin</span>
-                    <h2 class="article__heading">THE KEY IS VICTORY WAS<br>CREATING ROUTINES</h2>
-                    <span class="article__subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
+                    <h2 class="article__heading">LỄ HỘI ĐỒ GỐM TẠI VIỆT NAM</h2>
+                    <span class="article__subheading">Lễ hội của chúng tôi luôn chào đón mọi người, từ trẻ nhỏ đến người lớn.</span>
                     <a href="index.php?page=blog"><button class="btn">Đọc thêm</button></a>
                 </div>
             </div>

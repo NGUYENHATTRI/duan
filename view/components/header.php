@@ -21,7 +21,7 @@
             <?php 
             if(isset($_SESSION['user']['user_name'])){
                 echo '<li style="color: #F598A4;text-transform:uppercase;font-weight: 600;font-size: 14px;" 
-                class="header__nav-item "><a href="./index.php?page=user&id='.$_SESSION['user']['iduser'].'" style="color: #F598A4;">'.'XIN CHÀO '.$_SESSION['user']['user_name'].'</a></li>';
+                class="header__nav-item "><a href="./index.php?page=user" style="color: #F598A4;">'.'XIN CHÀO '.$_SESSION['user']['user_name'].'</a></li>';
                 // echo '<a href="./tranguser.php"><img class="imguser" src="../'.$_SESSION['img'].'"></a>';
             }
             else {
@@ -34,7 +34,10 @@
             <input type="text" class="input" id='input' style='margin-right:50px;'>
             <div class="search__result"></div>
             <a href="" class="header__action-item"><img src="view/img/search_icon.svg" alt=""></a>
-            <a href="./index.php?page=login" class="header__action-item"><img src="view/img/icon_user.svg" alt=""></a>
+            <?php 
+                if (!isset($_SESSION['user'])): ?>
+                <a href="./index.php?page=login" class="header__action-item"><img src="view/img/icon_user.svg" alt=""></a>
+            <?php endif?>
             <a href="./index.php?page=cart" class="header__action-item"><img src="view/img/cart_icon.svg" alt=""></a>
             <a href="" class="header__action-item"><img src="view/img/hamburger menu.svg" alt=""></a>
             <?php 

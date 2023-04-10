@@ -73,7 +73,7 @@ session_start();
                     <img src="view/img/Group 400.svg" width ="70px" height="70px"alt="">
                 </div>
                 <h3 style="color:#f5f5f5;" class="add_heading">
-LIÊN HỆ VỚI CHÚNG TÔI
+                    LIÊN HỆ VỚI CHÚNG TÔI
                 </h3>
 
                 <div class="add_item">

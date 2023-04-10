@@ -1,3 +1,8 @@
+<?php 
+if(!isset($_SESSION['user'])){
+  header('location: ../index.php?page=index');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,19 +82,16 @@
     </div>
     <hr>
     <ul class="app-menu">
-      <li><a class="app-menu__item active" href="./index.php?page=index"><i class='app-menu__icon bx bx-tachometer'></i><span
+      <li><a class="app-menu__item " href="./index.php?page=index"><i class='app-menu__icon bx bx-tachometer'></i><span
             class="app-menu__label">Bảng điều khiển</span></a></li>
-      <li><a class="app-menu__item " href="./index.php?page=user&action=list"><i class='app-menu__icon bx bx-id-card'></i> <span
+      <li><a class="app-menu__item active" href="./index.php?page=user&action=list"><i class='app-menu__icon bx bx-id-card'></i> <span
             class="app-menu__label">Quản lý nhân viên</span></a></li>
 
-      <li><a class="app-menu__item" href="./index.php?page=user&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý khách hàng</span></a></li>
-
-      <li><a class="app-menu__item " href="./index.php?page=post&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
+      <!-- <li><a class="app-menu__item " href="./index.php?page=post&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
 
             class="app-menu__label">Quản lý bài viết</span></a></li>
       <li><a class="app-menu__item " href="./index.php?page=TA_cmt&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý bình luận</span></a></li>
+            class="app-menu__label">Quản lý bình luận</span></a></li> -->
       
       
       <li><a class="app-menu__item" href="./index.php?page=catergory&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
@@ -185,9 +187,9 @@
                                       <form action="./controller/user_controller.php" method="POST"> 
                                         <input type="text" value="<?php echo $user['id']?>" name="id" hidden>
                                         <input type="text" value="delete" name="action"hidden>
-                                        <button class="btn btn-primary btn-sm trash" type="submit" title="Xóa"
+                                        <!-- <button class="btn btn-primary btn-sm trash" type="submit" title="Xóa"
                                                  onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
-                                             </button>
+                                             </button> -->
                                         </form>
                                         <a href="./index.php?page=user&action=edit&id=<?php echo $user['id']?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
                                         data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
