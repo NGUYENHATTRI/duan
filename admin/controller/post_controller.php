@@ -13,6 +13,7 @@
                 break;
             case 'edit':
                 include_once '../model/post_model.php';
+                $post =  get_post_with_ID($_GET['id']);
                 include_once 'view/post/edit.php';
                 break;
           
@@ -48,9 +49,9 @@
 
     function update_post(){
         global $conn;
-        $sql = 'UPDATE post SET it = ?,title = ?,content = ? WHERE id = '. $_POST['title'];
+        $sql = 'UPDATE post SET title = ?, content = ? WHERE id = '. $_POST['id'];
         $stmt = $conn->prepare($sql);
-        $stmt ->execute([$_POST['id'], $_POST['title'], $_POST['content']]);
+        $stmt ->execute([$_POST['title'], $_POST['content']]);
         header ('location: ../index.php?page=post&action=list');
     }
 

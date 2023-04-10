@@ -1,3 +1,8 @@
+<?php 
+if(!isset($_SESSION['user'])){
+  header('location: ../index.php?page=index');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +36,7 @@
 
 
       <!-- User Menu-->
-      <li><a class="app-nav__item" href="/index.html"><i class='bx bx-log-out bx-rotate-180'></i> </a>
+      <li><a class="app-nav__item" href="../model/log_out.php"><i class='bx bx-log-out bx-rotate-180'></i> </a>
 
       </li>
     </ul>
@@ -49,19 +54,19 @@
     </div>
     <hr>
     <ul class="app-menu">
-      <li><a class="app-menu__item active" href="./index.php?page=index"><i class='app-menu__icon bx bx-tachometer'></i><span
+      <li><a class="app-menu__item " href="./index.php?page=index"><i class='app-menu__icon bx bx-tachometer'></i><span
             class="app-menu__label">Bảng điều khiển</span></a></li>
       <li><a class="app-menu__item " href="./index.php?page=user&action=list"><i class='app-menu__icon bx bx-id-card'></i> <span
             class="app-menu__label">Quản lý nhân viên</span></a></li>
 
-      <li><a class="app-menu__item" href="./index.php?page=user&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý khách hàng</span></a></li>
+      <!-- <li><a class="app-menu__item" href="./index.php?page=user&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
+            class="app-menu__label">Quản lý khách hàng</span></a></li> -->
 
-      <li><a class="app-menu__item " href="./index.php?page=post&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
+      <li><a class="app-menu__item active" href="./index.php?page=post&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
 
-            class="app-menu__label">Quản lý bài viết</span></a></li>
-      <li><a class="app-menu__item " href="./index.php?page=TA_cmt&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
-            class="app-menu__label">Quản lý bình luận</span></a></li>
+            class="app-menu__label ">Quản lý bài viết</span></a></li>
+      <!-- <li><a class="app-menu__item " href="./index.php?page=TA_cmt&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
+            class="app-menu__label">Quản lý bình luận</span></a></li> -->
       
       
       <li><a class="app-menu__item" href="./index.php?page=catergory&action=list"><i class='app-menu__icon bx bx-user-voice'></i><span
@@ -90,10 +95,7 @@
                               <a class="btn btn-add btn-sm" href="./index.php?page=post&action=add" title="Thêm"><i class="fas fa-plus"></i>
                                 Tạo mới bài viết</a>
                            
-                            <div class="col-sm-2">
-                              <a class="btn btn-delete btn-sm" type="button" title="Xóa" onclick="myFunction(this)"><i
-                                  class="fas fa-trash-alt"></i> Xóa tất cả </a>
-                            </div>
+                            
                           </div>
                         <table class="table table-hover table-bordered" id="sampleTable">
                             <thead>
@@ -127,7 +129,7 @@
                                                  onclick="myFunction(this)"><i class="fas fa-trash-alt"></i>
                                              </button>
                                         </form>
-                                        <a href="./index.php?page=post&action=edit<?php echo $post['id']?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
+                                        <a href="./index.php?page=post&action=edit&id=<?php echo $post['id']?>"><button class="btn btn-primary btn-sm edit" type="button" title="Sửa" id="show-emp" data-toggle="modal"
                       data-target="#ModalUP"><i class="fas fa-edit"></i></button></a>
                                    
                                     </td>
