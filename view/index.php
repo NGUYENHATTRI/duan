@@ -28,30 +28,30 @@ session_start();
                     </h1>
                     <h3 class="slider__subtitle"><img class="mr-vector" src="view/img/Vector 1.svg" alt="">Một bộ 3 sản phẩm
                         với các kích thước khác nhau nằm chung tạo nên 1 bộ sản phẩm<br>nội thất hoàn hảo.</h3>
-                    <button class="btn">XEM THÊM</button>
+                    <a href="./index.php?page=shop"><button class="btn">XEM THÊM</button></a>
                 </div>
             </div>
 
             <div class="category">
                 <div class="grid">
                     <div class="category__item" style="background-image: url(view/img/obc-gift-set-410x260\ 1-1.svg);">
-                        <a href="" class="category__link">
-                            <h2 class="category__title">Cốc<br>cafe</h2>
+                        <a href="./index.php?page=shop" class="category__link">
+                            <h2 class="category__title">Đèn<br>Lòng</h2>
                             <h3 class="category__subtitle"><img src="view/img/Line 19.svg" alt="" class="mr-vector">Gifset
                             </h3>
                             <span class="category-item--hover">Xem thêm</span>
                         </a>
                     </div>
                     <div class="category__item" style="background-image: url(view/img/obc-gift-set-410x260\ 1.svg);">
-                        <a href="" class="category__link">
-                            <h2 class="category__title">Cốc<br>cafe</h2>
+                        <a href="./index.php?page=shop" class="category__link">
+                            <h2 class="category__title">Cốc<br>Trang Trí</h2>
                             <h3 class="category__subtitle"><img src="view/img/Line 19.svg" alt="" class="mr-vector">Gifset
                             </h3>
                             <span class="category-item--hover">Xem thêm</span>
                         </a>
                     </div>
                     <div class="category__item" style="background-image: url(view/img/obc-table-deco-410x260\ 1.svg);">
-                        <a href="" class="category__link">
+                        <a href="./index.php?page=shop" class="category__link">
                             <h2 class="category__title">Chậu<br>trồng cây</h2>
                             <h3 class="category__subtitle"><img src="view/img/Line 19.svg" alt="" class="mr-vector">Table
                                 decor</h3>
@@ -69,7 +69,7 @@ session_start();
                         <h3 class="category__subtitle workshop__subtitle"><img src="view/img/Line 19.svg" alt=""
                                 class="mr-vector">Sản phẩm được sản xuất từ YG shop luôn đảm bảo chất lượng,<br>niềm vui
                             của quý khách là hạnh phuc của chúng tôi</h3>
-                        <button class="btn">Xem thêm</button>
+                        <a href="./index.php?page=shop"><button class="btn">Xem thêm</button></a>
                     </div>
                 </div>
             </div>
@@ -78,23 +78,23 @@ session_start();
                 <div class="grid">
                     <h2 class="product__title">SẢN PHẨM MỚI</h2>
                 <?php
-                $product_list = $conn->query('SELECT * FROM product where kho_hang >= 1 limit 6')->fetchAll();
+                $product_list = $conn->query('SELECT * FROM product where kho_hang >= 1 limit 7')->fetchAll();
                 $i = 0;
                 foreach($product_list as $product){
                     $image_path = "view/img/shop/" . $product['image_path'];
-                    if ($i == 0 ):?>
+                    if ($i == 0 ){?>
                         <div class="product__wrapper product__wrapper--huge">
                             <a href="index.php?page=detail&id=<?php echo $product['id'] ?>"><img src="<?php echo $image_path ?>" alt="" class="product__img" style="height: 308px"></a>
                             <span class="product__name"><?php echo $product['product_name']?></span>
                             <span class="product__price"><?php echo $product['product_price']?></span>
                         </div>
-                    <?php endif?>
+                    <?php $i++;}else {?>
                     <div class="product__wrapper">
                     <a href="index.php?page=detail&id=<?php echo $product['id'] ?>"><img src="<?php echo $image_path ?>" alt="" class="product__img" style="height: 308px"></a>
                             <span class="product__name"><?php echo $product['product_name']?></span>
                             <span class="product__price"><?php echo $product['product_price']?></span>
                     </div>
-                    <?php $i++;}?>
+                    <?php }}?>
                 </div>
             </div>
 
@@ -108,7 +108,7 @@ session_start();
                             <h3 class="voucher__sale">Sale 30%</h3>
                         </div>
                     </div>
-                    <button class="btn">Xem thêm</button>
+                    <a href="./index.php?page=shop"><button class="btn">Xem thêm</button></a>
                 </div>
             </div>
 
@@ -135,9 +135,9 @@ session_start();
                 </h2>
                 <div class="article" style="background-image: url('view/img/Group\ 393.svg');">
                     <span class="article__author">By: admin</span>
-                    <h2 class="article__heading">THE KEY IS VICTORY WAS<br>CREATING ROUTINES</h2>
-                    <span class="article__subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
-                    <button class="btn">Đọc thêm</button>
+                    <h2 class="article__heading">LỄ HỘI ĐỒ GỐM TẠI VIỆT NAM</h2>
+                    <span class="article__subheading">Lễ hội của chúng tôi luôn chào đón mọi người, từ trẻ nhỏ đến người lớn.</span>
+                    <a href="index.php?page=blog"><button class="btn">Đọc thêm</button></a>
                 </div>
             </div>
 

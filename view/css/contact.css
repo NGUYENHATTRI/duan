@@ -275,3 +275,9 @@
     position: absolute;
     z-index: -1;
 }
+
+::placeholder {
+    color: #757575;
+    opacity: 0.5;
+    padding-left: 20px;
+}

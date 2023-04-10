@@ -23,14 +23,15 @@ session_start();
         <div class="grid">    
         <div class="image__wrapper">
                     <img src="view/img/shop/Rectangle 2.svg" alt="" class="br">
-                    <h2 class="image__title">LIÊN HỆ</h2>
-                    <span class="image__breadcrum">Trang chủ / Liên hệ</span>
+                    <h2 class="image__title">BÀI VIẾT</h2>
+                    <span class="image__breadcrum">Trang chủ / Bài viết</span>
                 </div>
         </div>
             </div>
           
             <div class="grid">
-            <?php 
+            <?php               
+                                
                                 $post_list = get_post_list();
                                 foreach($post_list as $post){
                                 $image_path = get_image_path($post['image_path']);
@@ -44,24 +45,13 @@ session_start();
                     <a href="index.php?page=blogdetail&id=<?php echo $post['id']?>"><button class="btn" >Đọc thêm</button></a>
                     
                     <div class="post_item-img">
-                    <img src=<?php echo $image_path ?> alt="" >
+                    <img src="<?php echo  $image_path ?>" alt="">
                     </div>
-                    <h2 class="article__heading">THE KEY IS VICTORY WAS<br>CREATING ROUTINES</h2>
-                    <span class="article__subheading">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</span>
-                    <button class="btn">Đọc thêm</button>
                 </div>
+                <?php } ?>
             </div>
-
-
             
-
-
-            
-
-
-            
-
-
+                                    
     </div>    
         </div>
         <div class="gird">
@@ -80,7 +70,6 @@ session_start();
 
                     </div>
                 </div>
-                <?php } ?>
             </div>
         <?php include_once 'view/components/footer.php'?>;
     </div>
